@@ -22,7 +22,8 @@ class PaceService
         $distance = floatval(str_replace(',', '.', $splitMessage[1]));
 
         if ($distance == 0) {
-            return $this->replyService->replyWithDefaultMessage();
+            $this->replyService->replyWithDefaultMessage();
+            die();
         }
 
         $paceInSeconds = $this->parseTime($expectedTime) / $distance;
