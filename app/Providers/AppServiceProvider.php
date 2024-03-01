@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Laravel\Lumen\Routing\UrlGenerator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,5 +15,18 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+    }
+
+    /**
+     * Bootstrap any application services.
+     *
+     * @param UrlGenerator $url
+     * @return void
+     */
+    public function boot(UrlGenerator $url)
+    {
+        if (env('APP_ENV') == 'production') {
+            $url->forceScheme('https');
+        }
     }
 }
