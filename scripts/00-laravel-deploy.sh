@@ -12,5 +12,5 @@ php artisan route:cache
 echo "Running migrations..."
 php artisan migrate --force
 
-#write access for logs
+echo "Write access for logs..."
 chmod -R ugo+rw storage
