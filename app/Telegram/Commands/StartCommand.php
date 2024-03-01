@@ -26,7 +26,7 @@ class StartCommand extends Command
         // Log info
         info('chat log:', $this->update->getMessage()->getChat()->toArray());
 
-        $message = ReplyTexts::START_1 . ReplyTexts::DEFAULT_2 . ReplyTexts::DEFAULT_2_2 . ReplyTexts::DEFAULT_3 . ReplyTexts::DEFAULT_3_2;
+        $message = ReplyTexts::START_1 . ReplyTexts::DEFAULT_2 . ReplyTexts::DEFAULT_2_2 . ReplyTexts::START_2 . ReplyTexts::DEFAULT_3 . ReplyTexts::DEFAULT_3_2;
         $this->replyService->replyHtml($message);
 
         die();
