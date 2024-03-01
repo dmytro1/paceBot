@@ -1,4 +1,4 @@
-FROM richarvey/nginx-php-fpm:1.9.1
+FROM php:8.1-fpm
 
 COPY . .
 
@@ -8,7 +8,6 @@ ENV WEBROOT /var/www/html/public
 ENV PHP_ERRORS_STDERR 1
 ENV RUN_SCRIPTS 1
 ENV REAL_IP_HEADER 1
-ENV PHP_VERSION 8.1
 
 # Laravel config
 ENV APP_ENV production
