@@ -4,6 +4,10 @@ namespace App\Telegram\Services;
 
 class PaceService
 {
+    public function __construct(protected ReplyService $replyService)
+    {
+    }
+
     /**
      * Calculates expected pace based on expected time and distance.
      * Time format: hh:mm:ss (21:40)
@@ -16,6 +20,10 @@ class PaceService
     {
         $expectedTime = $splitMessage[0];
         $distance = floatval(str_replace(',', '.', $splitMessage[1]));
+
+        if ($distance == 0) {
+            return $this->replyService->replyWithDefaultMessage();
+        }
 
         $paceInSeconds = $this->parseTime($expectedTime) / $distance;
 
