@@ -36,7 +36,8 @@ class PaceController extends Controller
     public function webhookHandler(): Message
     {
         $message = $this->update->getMessage()->getText();
-        $splitMessage = explode(' ', trim($message));
+        $clearMessage = trim(str_replace("'", '', $message));
+        $splitMessage = explode(' ', $clearMessage);
 
         if (count($splitMessage) !== 2) {
             return $this->replyService->replyWithDefaultMessage();
