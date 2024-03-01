@@ -21,7 +21,8 @@ class PaceService
 
         $pace = gmdate('i:s', $paceInSeconds);
 
-        return "Distance: $distance km\nTime: $expectedTime\nExpected pace: <b>$pace min/km</b>";
+        return "Відстань: $distance km\nЧас: $expectedTime\nТемп треба: <b>$pace min/km</b>";
+//        return "Distance: $distance km\nTime: $expectedTime\nExpected pace: <b>$pace min/km</b>";
     }
 
     /**
@@ -43,9 +44,12 @@ class PaceService
 
         $metric = ($expectedTimeInSeconds >= 3600) ? ' h' : ($expectedTimeInSeconds >= 60 ? ' min' : ' sec');
 
-        $d = "Distance: " . ($distance > 1 ? $distance . " km\n" : $distance * 1000 . " m\n");
-        $p = "Pace: $expectedPace min/km\n";
-        $t = 'Expected time: <b>' . $expectedTime . $metric . '</b>';
+//        $d = "Distance: " . ($distance > 1 ? $distance . " km\n" : $distance * 1000 . " m\n");
+//        $p = "Pace: $expectedPace min/km\n";
+//        $t = 'Expected time: <b>' . $expectedTime . $metric . '</b>';
+        $d = "Відстань: " . ($distance > 1 ? $distance . " km\n" : $distance * 1000 . " m\n");
+        $p = "Темп: $expectedPace min/km\n";
+        $t = 'Час буде: <b>' . $expectedTime . $metric . '</b>';
 
         return $d . $p . $t;
     }
