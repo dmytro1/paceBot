@@ -37,7 +37,7 @@ class ReplyService
      */
     public function replyWithDefaultMessage(): Message
     {
-        $message = ReplyTexts::DEFAULT_1 . ReplyTexts::DEFAULT_2 . ReplyTexts::DEFAULT_3;
+        $message = ReplyTexts::DEFAULT_1 . ReplyTexts::DEFAULT_2 . ReplyTexts::DEFAULT_2_2 . ReplyTexts::DEFAULT_3 . ReplyTexts::DEFAULT_3_2;
         return $this->replyHtml($message);
     }
 }
